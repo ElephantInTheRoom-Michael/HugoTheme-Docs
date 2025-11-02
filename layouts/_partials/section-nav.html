@@ -1,0 +1,13 @@
+<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+<ul>
+    {{ range .RegularPages }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </li>
+    {{ end }}
+    {{ range .Sections }}
+        <li>
+            {{ partial "section-nav.html" . }}
+        </li>
+    {{ end }}
+</ul>

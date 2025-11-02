@@ -1,0 +1,9 @@
+<nav>
+    <ul>
+        {{ range $.Site.Sections }}
+            <li>
+                {{ partial "section-nav.html" . }}
+            </li>
+        {{ end }}
+    </ul>
+</nav>
