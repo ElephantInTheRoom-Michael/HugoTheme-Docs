@@ -1,13 +1,9 @@
-<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-<ul>
-    {{ range .RegularPages }}
-        <li>
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        </li>
-    {{ end }}
-    {{ range .Sections }}
-        <li>
+{{ range $.Site.Sections }}
+    <li>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        <ul>
+            {{ partial "page-nav.html" . }}
             {{ partial "section-nav.html" . }}
-        </li>
-    {{ end }}
-</ul>
+        </ul>
+    </li>
+{{ end }}
